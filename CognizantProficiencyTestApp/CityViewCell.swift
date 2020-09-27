@@ -1,0 +1,98 @@
+//
+//  CityViewCell.swift
+//  CognizantProficiencyTestApp
+//
+//  Created by OMNIADMIN on 27/09/20.
+//
+
+import UIKit
+import SDWebImage
+
+class CityViewCell: UITableViewCell {
+
+    var widthConstraint: NSLayoutConstraint!
+    var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.font = UIFont.preferredFont(forTextStyle: .footnote)
+        return label
+    }()
+    
+    var titleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        return label
+    }()
+    
+    var imgView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    var labelStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 8
+        return stackView
+    }()
+    
+    var emptySpace: UIView = {
+        let spaceView = UIView()
+        return spaceView
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setUp()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    func setUp() {
+        self.contentView.addSubview(imgView)
+        self.contentView.addSubview(labelStackView)
+        
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        labelStackView.translatesAutoresizingMaskIntoConstraints = false
+        labelStackView.addArrangedSubview(titleLabel)
+        labelStackView.addArrangedSubview(descriptionLabel)
+        labelStackView.addArrangedSubview(emptySpace)
+
+        imgView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
+        imgView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10).isActive = true
+        imgView.trailingAnchor.constraint(equalTo: self.labelStackView.leadingAnchor, constant: -10).isActive = true
+        
+        widthConstraint = imgView.widthAnchor.constraint(equalToConstant: 60)
+        widthConstraint.isActive = true
+        imgView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        emptySpace.heightAnchor.constraint(equalToConstant: 4).isActive = true
+
+        labelStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
+        labelStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10).isActive = true
+        labelStackView.leadingAnchor.constraint(equalTo: self.imgView.trailingAnchor, constant: 10).isActive = true
+        labelStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10).isActive = true
+        
+    }
+    func setData(cityDetailObj: CityDetail?) {
+        self.widthConstraint.constant = 60
+        if let detailObj = cityDetailObj {
+            
+            if let imageUrl = detailObj.image{
+                self.imgView.sd_setImage(with: URL(string: imageUrl), placeholderImage: #imageLiteral(resourceName: "error-image-generic"), options: .continueInBackground, context: nil)
+            } else {
+                self.widthConstraint.constant = 0
+            }
+            self.titleLabel.text = detailObj.title
+            self.descriptionLabel.text = detailObj.descrption ?? "No Description"
+        }
+        self.layoutIfNeeded()
+    }
+}
