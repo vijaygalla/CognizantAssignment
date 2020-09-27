@@ -9,4 +9,6 @@ import Foundation
 
 struct NetworkConstants {
     static let cityAPIUrl = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
+    static let httpGet = "GET"
+    static let httpPost = "POST"
 }

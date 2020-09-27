@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import MBProgressHUD
-import Kingfisher
 
 var imageCache = NSCache<AnyObject, AnyObject>()
 extension UIImageView {

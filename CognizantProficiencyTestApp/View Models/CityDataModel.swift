@@ -21,7 +21,6 @@ class CityDataModel {
                     self.city = cityObj
                     completion(nil)
                 } catch {
-                    completion(nil)
                     fatalError("Failed to decode the data")
                 }
             case .failure(let error):

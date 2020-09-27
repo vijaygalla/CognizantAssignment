@@ -2,7 +2,7 @@
 //  CityViewCell.swift
 //  CognizantProficiencyTestApp
 //
-//  Created by OMNIADMIN on 27/09/20.
+//  Created by Vijay Bhaskar on 27/09/20.
 //
 
 import UIKit
@@ -73,6 +73,8 @@ class CityViewCell: UITableViewCell {
         imgView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10).isActive = true
         imgView.trailingAnchor.constraint(equalTo: self.labelStackView.leadingAnchor, constant: -10).isActive = true
         
+        // MARK:- TraitCollection changes based on size classes(iPad & iPhone)
+        
         if (self.traitCollection.horizontalSizeClass == .regular &&  self.traitCollection.verticalSizeClass == .regular) {
             self.titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
             self.descriptionLabel.font = UIFont.preferredFont(forTextStyle: .body)
@@ -90,6 +92,8 @@ class CityViewCell: UITableViewCell {
             imgView.heightAnchor.constraint(equalToConstant: 60).isActive = true
             emptySpace.heightAnchor.constraint(equalToConstant: 4).isActive = true
         }
+        
+        // MARK:- Labels construction for title and description using stackview
         
         labelStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
         labelStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10).isActive = true
