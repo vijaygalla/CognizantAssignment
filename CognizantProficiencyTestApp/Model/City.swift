@@ -7,7 +7,11 @@
 
 import Foundation
 
-public struct City: Codable {
+public struct City: Codable, Equatable {
+    public static func == (lhs: City, rhs: City) -> Bool {
+        return (lhs.title == rhs.title)
+    }
+    
     var title: String?
     var details: [CityDetail]?
     

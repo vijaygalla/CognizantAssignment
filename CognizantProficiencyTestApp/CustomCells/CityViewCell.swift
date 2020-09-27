@@ -58,6 +58,7 @@ class CityViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     func setUp(traitCollection: UITraitCollection) {
+        self.selectionStyle = .none
         self.contentView.addSubview(imgView)
         self.contentView.addSubview(labelStackView)
         

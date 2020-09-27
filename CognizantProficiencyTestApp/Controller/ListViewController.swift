@@ -13,15 +13,19 @@ class ListViewController: UIViewController {
     fileprivate var cityViewModel: CityDataModel?
     var tableView: UITableView!
     var availableCityData = [CityDetail]()
+    let refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView = UITableView()
-        tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
+        
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableView.automaticDimension
+        
+        refreshControl.addTarget(self, action: #selector(getListData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
 
         self.tableView.register(CityViewCell.self, forCellReuseIdentifier: String(describing: CityViewCell.self))
 
@@ -34,10 +38,10 @@ class ListViewController: UIViewController {
         
         self.cityViewModel = CityDataModel()
         
-        getListData()
+        self.getListData()
     }
     
-    func getListData() {
+    @objc func getListData() {
         MBProgressHUD.showAdded(to: self.view, animated: true)
         self.cityViewModel?.getCityData(url: NetworkConstants.cityAPIUrl, parameters: [:], completion: { (error) in
             if error == nil {
@@ -47,6 +51,7 @@ class ListViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 MBProgressHUD.hide(for: self.view, animated: true)
+                self.refreshControl.endRefreshing()
             }
         })
     }
@@ -71,7 +76,4 @@ extension ListViewController: UITableViewDataSource {
         cell.setData(cityDetailObj: self.availableCityData[indexPath.row])
         return cell
     }
-}
-extension ListViewController: UITableViewDelegate {
-    
 }

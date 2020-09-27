@@ -7,7 +7,11 @@
 
 import Foundation
 
-class CityDataModel {
+protocol CityDataModelDelegate {
+    func getCityData(url: String, parameters: [String: String], completion:@escaping(_ error: Error?)->())
+}
+
+class CityDataModel: CityDataModelDelegate {
     var city: City?
     
     func getCityData(url: String, parameters: [String: String], completion:@escaping(_ error: Error?)->()) {

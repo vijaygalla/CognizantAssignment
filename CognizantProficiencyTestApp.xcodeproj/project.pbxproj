@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		42074135251E36C800804CDD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42074134251E36C800804CDD /* UIImageView+Extensions.swift */; };
 		423900712520391D00E0C269 /* CityViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423900702520391D00E0C269 /* CityViewCell.swift */; };
+		4239009A2520901E00E0C269 /* CognizantProficiencyTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423900992520901E00E0C269 /* CognizantProficiencyTestAppTests.swift */; };
 		42D28791251DFA7F0071BDE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D28790251DFA7F0071BDE4 /* AppDelegate.swift */; };
 		42D28793251DFA7F0071BDE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D28792251DFA7F0071BDE4 /* SceneDelegate.swift */; };
 		42D28795251DFA7F0071BDE4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D28794251DFA7F0071BDE4 /* ListViewController.swift */; };
@@ -22,9 +23,23 @@
 		70F3C951D164979EB2A2609A /* Pods_CognizantProficiencyTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE266801E7C56A6EACE7B32 /* Pods_CognizantProficiencyTestApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4239009C2520901E00E0C269 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42D28785251DFA7F0071BDE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42D2878C251DFA7F0071BDE4;
+			remoteInfo = CognizantProficiencyTestApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		42074134251E36C800804CDD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		423900702520391D00E0C269 /* CityViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewCell.swift; sourceTree = "<group>"; };
+		423900972520901E00E0C269 /* CognizantProficiencyTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CognizantProficiencyTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		423900992520901E00E0C269 /* CognizantProficiencyTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognizantProficiencyTestAppTests.swift; sourceTree = "<group>"; };
+		4239009B2520901E00E0C269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		423900A32520903A00E0C269 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		42D2878D251DFA7F0071BDE4 /* CognizantProficiencyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CognizantProficiencyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D28790251DFA7F0071BDE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42D28792251DFA7F0071BDE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +58,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		423900942520901E00E0C269 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42D2878A251DFA7F0071BDE4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,10 +132,20 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		423900982520901E00E0C269 /* CognizantProficiencyTestAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				423900992520901E00E0C269 /* CognizantProficiencyTestAppTests.swift */,
+				4239009B2520901E00E0C269 /* Info.plist */,
+			);
+			path = CognizantProficiencyTestAppTests;
+			sourceTree = "<group>";
+		};
 		42D28784251DFA7F0071BDE4 = {
 			isa = PBXGroup;
 			children = (
 				42D2878F251DFA7F0071BDE4 /* CognizantProficiencyTestApp */,
+				423900982520901E00E0C269 /* CognizantProficiencyTestAppTests */,
 				42D2878E251DFA7F0071BDE4 /* Products */,
 				AC62DB7C35C3BCD1830BA47E /* Pods */,
 				60DAF2DD96C5E49C071A7F06 /* Frameworks */,
@@ -124,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				42D2878D251DFA7F0071BDE4 /* CognizantProficiencyTestApp.app */,
+				423900972520901E00E0C269 /* CognizantProficiencyTestAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +184,7 @@
 		60DAF2DD96C5E49C071A7F06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				423900A32520903A00E0C269 /* XCTest.framework */,
 				8AE266801E7C56A6EACE7B32 /* Pods_CognizantProficiencyTestApp.framework */,
 			);
 			name = Frameworks;
@@ -168,6 +202,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		423900962520901E00E0C269 /* CognizantProficiencyTestAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 423900A02520901E00E0C269 /* Build configuration list for PBXNativeTarget "CognizantProficiencyTestAppTests" */;
+			buildPhases = (
+				423900932520901E00E0C269 /* Sources */,
+				423900942520901E00E0C269 /* Frameworks */,
+				423900952520901E00E0C269 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4239009D2520901E00E0C269 /* PBXTargetDependency */,
+			);
+			name = CognizantProficiencyTestAppTests;
+			productName = CognizantProficiencyTestAppTests;
+			productReference = 423900972520901E00E0C269 /* CognizantProficiencyTestAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		42D2878C251DFA7F0071BDE4 /* CognizantProficiencyTestApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42D287A1251DFA800071BDE4 /* Build configuration list for PBXNativeTarget "CognizantProficiencyTestApp" */;
@@ -196,6 +248,10 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					423900962520901E00E0C269 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 42D2878C251DFA7F0071BDE4;
+					};
 					42D2878C251DFA7F0071BDE4 = {
 						CreatedOnToolsVersion = 12.0.1;
 					};
@@ -215,11 +271,19 @@
 			projectRoot = "";
 			targets = (
 				42D2878C251DFA7F0071BDE4 /* CognizantProficiencyTestApp */,
+				423900962520901E00E0C269 /* CognizantProficiencyTestAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		423900952520901E00E0C269 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42D2878B251DFA7F0071BDE4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,6 +339,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		423900932520901E00E0C269 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4239009A2520901E00E0C269 /* CognizantProficiencyTestAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42D28789251DFA7F0071BDE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +364,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4239009D2520901E00E0C269 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42D2878C251DFA7F0071BDE4 /* CognizantProficiencyTestApp */;
+			targetProxy = 4239009C2520901E00E0C269 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		42D28796251DFA7F0071BDE4 /* Main.storyboard */ = {
@@ -313,6 +393,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4239009E2520901E00E0C269 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CognizantProficiencyTestAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Vijay.CognizantProficiencyTestAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CognizantProficiencyTestApp.app/CognizantProficiencyTestApp";
+			};
+			name = Debug;
+		};
+		4239009F2520901E00E0C269 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CognizantProficiencyTestAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Vijay.CognizantProficiencyTestAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CognizantProficiencyTestApp.app/CognizantProficiencyTestApp";
+			};
+			name = Release;
+		};
 		42D2879F251DFA800071BDE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -470,6 +588,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		423900A02520901E00E0C269 /* Build configuration list for PBXNativeTarget "CognizantProficiencyTestAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4239009E2520901E00E0C269 /* Debug */,
+				4239009F2520901E00E0C269 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		42D28788251DFA7F0071BDE4 /* Build configuration list for PBXProject "CognizantProficiencyTestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
