@@ -12,20 +12,19 @@ class CityDataModel {
     
     func getCityData(url: String, parameters: [String: String], completion:@escaping(_ error: Error?)->()) {
         
-        NetworkManager.getDataAPI(url: url, parameters: parameters) { (responseData,error)  in
+        NetworkManager.getDataAPI(url: url, parameters: parameters) { (result)  in
             
-            if error == nil {
+            switch result {
+            case .success(let data):
                 do {
-                    if let data = responseData {
-                            let cityObj = try JSONDecoder().decode(City.self, from: data)
-                            self.city = cityObj
-                    }
-    
+                    let cityObj = try JSONDecoder().decode(City.self, from: data)
+                    self.city = cityObj
                     completion(nil)
                 } catch {
+                    completion(nil)
                     fatalError("Failed to decode the data")
                 }
-            } else {
+            case .failure(let error):
                 completion(error)
             }
         }

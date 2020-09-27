@@ -11,7 +11,7 @@ import Foundation
 
 class NetworkManager {
     
-    class func getDataAPI(url: String, parameters: [String: String], completion: @escaping(_ data: Data?, _ error: Error?)->Void){
+    class func getDataAPI(url: String, parameters: [String: String], completion: @escaping(Result<Data, Error>)->Void){
 
         guard let url = URL(string: url) else {return}
         var urlRequest = URLRequest(url: url)
@@ -22,10 +22,10 @@ class NetworkManager {
             if error == nil, let data = data {
                 let jsonString = String(data: data, encoding: .isoLatin1)
                 if let jsonData = jsonString?.data(using: .utf8) {
-                    completion(jsonData, nil)
+                    completion(.success(jsonData))
                 }
             } else {
-                completion(nil, error)
+                    completion(.failure(error!))
                 }
         }.resume()
     }

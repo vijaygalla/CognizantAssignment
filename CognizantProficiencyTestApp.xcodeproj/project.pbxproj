@@ -19,7 +19,6 @@
 		42D287AA251DFDC10071BDE4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D287A9251DFDC10071BDE4 /* City.swift */; };
 		42D287AD251DFFCA0071BDE4 /* CityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D287AC251DFFCA0071BDE4 /* CityDataModel.swift */; };
 		42D287B7251E02C60071BDE4 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D287B6251E02C60071BDE4 /* NetworkConstants.swift */; };
-		42D287D2251E14990071BDE4 /* CityDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D287D1251E14990071BDE4 /* CityDetailViewCell.swift */; };
 		70F3C951D164979EB2A2609A /* Pods_CognizantProficiencyTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE266801E7C56A6EACE7B32 /* Pods_CognizantProficiencyTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		42D287A9251DFDC10071BDE4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		42D287AC251DFFCA0071BDE4 /* CityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataModel.swift; sourceTree = "<group>"; };
 		42D287B6251E02C60071BDE4 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
-		42D287D1251E14990071BDE4 /* CityDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewCell.swift; sourceTree = "<group>"; };
 		58745FC624F48E0F3224E8E9 /* Pods-CognizantProficiencyTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognizantProficiencyTestApp.debug.xcconfig"; path = "Target Support Files/Pods-CognizantProficiencyTestApp/Pods-CognizantProficiencyTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7FF9A83925CFC05E1F01E046 /* Pods-CognizantProficiencyTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognizantProficiencyTestApp.release.xcconfig"; path = "Target Support Files/Pods-CognizantProficiencyTestApp/Pods-CognizantProficiencyTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		8AE266801E7C56A6EACE7B32 /* Pods_CognizantProficiencyTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CognizantProficiencyTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +54,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		423900802520787A00E0C269 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42D28794251DFA7F0071BDE4 /* ListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		423900822520788300E0C269 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				423900702520391D00E0C269 /* CityViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		423900842520789500E0C269 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42D287A9251DFDC10071BDE4 /* City.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		423900862520789E00E0C269 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				42D287AC251DFFCA0071BDE4 /* CityDataModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		42390088252078AC00E0C269 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				42074134251E36C800804CDD /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4239008A252078C200E0C269 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				42D287B6251E02C60071BDE4 /* NetworkConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		4239008C252078D100E0C269 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				42D287A6251DFB000071BDE4 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		42D28784251DFA7F0071BDE4 = {
 			isa = PBXGroup;
 			children = (
@@ -79,14 +133,13 @@
 			children = (
 				42D28790251DFA7F0071BDE4 /* AppDelegate.swift */,
 				42D28792251DFA7F0071BDE4 /* SceneDelegate.swift */,
-				42D28794251DFA7F0071BDE4 /* ListViewController.swift */,
-				42D287D1251E14990071BDE4 /* CityDetailViewCell.swift */,
-				423900702520391D00E0C269 /* CityViewCell.swift */,
-				42D287AC251DFFCA0071BDE4 /* CityDataModel.swift */,
-				42D287A6251DFB000071BDE4 /* NetworkManager.swift */,
-				42D287B6251E02C60071BDE4 /* NetworkConstants.swift */,
-				42074134251E36C800804CDD /* UIImageView+Extensions.swift */,
-				42D287A9251DFDC10071BDE4 /* City.swift */,
+				423900802520787A00E0C269 /* Controller */,
+				423900822520788300E0C269 /* CustomCells */,
+				423900862520789E00E0C269 /* View Models */,
+				4239008C252078D100E0C269 /* Networking */,
+				4239008A252078C200E0C269 /* Constants */,
+				42390088252078AC00E0C269 /* Extensions */,
+				423900842520789500E0C269 /* Model */,
 				42D28796251DFA7F0071BDE4 /* Main.storyboard */,
 				42D28799251DFA800071BDE4 /* Assets.xcassets */,
 				42D2879B251DFA800071BDE4 /* LaunchScreen.storyboard */,
@@ -229,7 +282,6 @@
 				42D287B7251E02C60071BDE4 /* NetworkConstants.swift in Sources */,
 				423900712520391D00E0C269 /* CityViewCell.swift in Sources */,
 				42D287A7251DFB000071BDE4 /* NetworkManager.swift in Sources */,
-				42D287D2251E14990071BDE4 /* CityDetailViewCell.swift in Sources */,
 				42074135251E36C800804CDD /* UIImageView+Extensions.swift in Sources */,
 				42D287AA251DFDC10071BDE4 /* City.swift in Sources */,
 				42D287AD251DFFCA0071BDE4 /* CityDataModel.swift in Sources */,
