@@ -117,6 +117,8 @@ class CityViewCell: UITableViewCell {
     }
 }
 
+// MARK:- Traitcollection for iPad and iPhone when Orientation changes
+
 extension CityViewCell {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)

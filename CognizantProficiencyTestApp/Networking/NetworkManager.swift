@@ -14,12 +14,15 @@ class NetworkManager {
     class func getDataAPI(url: String, parameters: [String: String], completion: @escaping(Result<Data, Error>)->Void){
 
         guard let url = URL(string: url) else {return}
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = NetworkConstants.httpGet
         urlRequest.httpBody = nil
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
+        
         session.dataTask(with: urlRequest) { (data, response, error) in
             if error == nil, let data = data {
                 let jsonString = String(data: data, encoding: .isoLatin1)

@@ -11,11 +11,14 @@ import MBProgressHUD
 class ListViewController: UIViewController {
 
     fileprivate var cityViewModel: CityDataModel?
-    var tableView: UITableView!
     var availableCityData = [CityDetail]()
+
+    var tableView: UITableView!
     let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // MARK:- Constructing UITableView
         
         tableView = UITableView()
         tableView.dataSource = self
@@ -28,9 +31,10 @@ class ListViewController: UIViewController {
         tableView.refreshControl = refreshControl
 
         self.tableView.register(CityViewCell.self, forCellReuseIdentifier: String(describing: CityViewCell.self))
-
+        
+        // MARK:- TableView constraints
+        
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
-
         self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = true
         self.tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
         self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -10).isActive = true
@@ -40,6 +44,8 @@ class ListViewController: UIViewController {
         
         self.getListData()
     }
+    
+    // MARK:- Calling API to get the feed from JSON
     
     @objc func getListData() {
         MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -56,6 +62,7 @@ class ListViewController: UIViewController {
         })
     }
 
+    // MARK:- updating UI based on the success in fetching data
     func updateUI() {
         DispatchQueue.main.async {
             self.title = self.cityViewModel?.city?.title
@@ -65,6 +72,8 @@ class ListViewController: UIViewController {
         }
     }
 }
+
+// MARK:- TableView Datasource methods
 
 extension ListViewController: UITableViewDataSource {
     
