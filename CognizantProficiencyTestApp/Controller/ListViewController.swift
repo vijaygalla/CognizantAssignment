@@ -18,6 +18,10 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.traitCollection.verticalSizeClass == .regular, self.traitCollection.horizontalSizeClass == .regular {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: .title1)]
+        }
         // MARK:- Constructing UITableView
         
         tableView = UITableView()

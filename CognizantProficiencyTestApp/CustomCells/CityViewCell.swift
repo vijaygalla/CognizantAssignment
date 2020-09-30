@@ -87,7 +87,7 @@ class CityViewCell: UITableViewCell {
     func setTraitChange() {
         if (self.traitCollection.horizontalSizeClass == .regular &&  self.traitCollection.verticalSizeClass == .regular) {
             self.titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
-            self.descriptionLabel.font = UIFont.preferredFont(forTextStyle: .body)
+            self.descriptionLabel.font = UIFont.preferredFont(forTextStyle: .title2)
             widthConstraint = imgView.widthAnchor.constraint(equalToConstant: 100)
             validTraitWidth = 100
             widthConstraint.isActive = true
@@ -99,7 +99,7 @@ class CityViewCell: UITableViewCell {
             widthConstraint = imgView.widthAnchor.constraint(equalToConstant: 60)
             widthConstraint.isActive = true
             validTraitWidth = 60
-            imgView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+            imgView.heightAnchor.constraint(equalTo: imgView.widthAnchor, multiplier: 1).isActive = true
             emptySpace.heightAnchor.constraint(equalToConstant: 4).isActive = true
         }
     }
