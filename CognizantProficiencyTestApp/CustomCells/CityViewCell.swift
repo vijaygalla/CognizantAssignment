@@ -38,6 +38,7 @@ class CityViewCell: UITableViewCell {
     
     var labelStackView: UIStackView = {
         let stackView = UIStackView()
+//        stackView.alignment = .center
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 8
@@ -75,14 +76,22 @@ class CityViewCell: UITableViewCell {
         imgView.trailingAnchor.constraint(equalTo: self.labelStackView.leadingAnchor, constant: -10).isActive = true
         
         // MARK:- TraitCollection changes based on size classes(iPad & iPhone)
+            setTraitChange()
+        // MARK:- Labels construction for title and description using stackview
         
+        labelStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
+        labelStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10).isActive = true
+        labelStackView.leadingAnchor.constraint(equalTo: self.imgView.trailingAnchor, constant: 10).isActive = true
+        labelStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10).isActive = true
+    }
+    func setTraitChange() {
         if (self.traitCollection.horizontalSizeClass == .regular &&  self.traitCollection.verticalSizeClass == .regular) {
             self.titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
             self.descriptionLabel.font = UIFont.preferredFont(forTextStyle: .body)
             widthConstraint = imgView.widthAnchor.constraint(equalToConstant: 100)
             validTraitWidth = 100
             widthConstraint.isActive = true
-            imgView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+            imgView.heightAnchor.constraint(equalTo: imgView.widthAnchor, multiplier: 1).isActive = true
             emptySpace.heightAnchor.constraint(equalToConstant: 16).isActive = true
         } else {
             self.titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
@@ -93,14 +102,6 @@ class CityViewCell: UITableViewCell {
             imgView.heightAnchor.constraint(equalToConstant: 60).isActive = true
             emptySpace.heightAnchor.constraint(equalToConstant: 4).isActive = true
         }
-        
-        // MARK:- Labels construction for title and description using stackview
-        
-        labelStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
-        labelStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10).isActive = true
-        labelStackView.leadingAnchor.constraint(equalTo: self.imgView.trailingAnchor, constant: 10).isActive = true
-        labelStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10).isActive = true
-        
     }
     func setData(cityDetailObj: CityDetail?) {
         self.widthConstraint.constant = validTraitWidth
@@ -115,13 +116,4 @@ class CityViewCell: UITableViewCell {
         }
         self.layoutIfNeeded()
     }
-}
-
-// MARK:- Traitcollection for iPad and iPhone when Orientation changes
-
-extension CityViewCell {
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        setUp(traitCollection: traitCollection)
-    }    
 }
